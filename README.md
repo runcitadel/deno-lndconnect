@@ -21,7 +21,7 @@ This package is a TypeScript & Deno port of the original [node-lndconnect](https
 Formats a host / cert / macaroon combo into an lndconnect link.
 
 ```javascript
-import { format } from 'https://deno.land/x/lndconnect'
+import { format } from 'https://deno.land/x/lndconnect/mod.ts'
 const connectionString = format({
   host: '1.2.3.4:10009',
   cert: 'MIICuDCCAl...',
@@ -35,7 +35,7 @@ expect(connectionString).toEqual('lndconnect://1.2.3.4:10009?cert=MIICuDCCAl...&
 Encodes a host / cert / macaroon combo and formats into an lndconnect link.
 
 ```javascript
-import { encode } from 'https://deno.land/x/lndconnect'
+import { encode } from 'https://deno.land/x/lndconnect/mod.ts'
 const connectionString = encode({
   host: '1.2.3.4:10009',
   cert: '-----BEGIN CERTIFICATE-----\n...',
@@ -49,7 +49,7 @@ expect(connectionString).toEqual('lndconnect://1.2.3.4:10009?cert=MIICuDCCAl...&
 Decodes an lndconnect link into it's component parts (host / cert as utf8 / macaroon as hex)
 
 ```javascript
-import { decode } from 'https://deno.land/x/lndconnect'
+import { decode } from 'https://deno.land/x/lndconnect/mod.ts'
 const { host, cert, macaroon } = decode('lndconnect://1.2.3.4:10009?cert=MIICuDCCAl...&macaroon=AgEDbG5kAr...')
 expect(host).toEqual('1.2.3.4:10009')
 expect(cert).toEqual('MIICuDCCAl...')
@@ -58,12 +58,13 @@ expect(macaroon).toEqual('0201036c6...')
 
 #### Certificate
 
-**encodeCert(cert, format):**
+**encodeCert(cert):**
 
-Encodes a certificate (String or Buffer) to base64url encoded DER format.
+Encodes a certificate (String) or a path to a certifiate (string) to base64url encoded DER format.
+If you provide a path, the path is encoded, not the contents of the file with that path.
 
 ```javascript
-import { encodeCert } from 'https://deno.land/x/lndconnect'
+import { encodeCert } from 'https://deno.land/x/lndconnect/mod.ts'
 const certPath = path.join(__dirname, 'tls.cert')
 const cert = encodeCert(certPath)
 // returns base64url encoded DER cert.
@@ -75,7 +76,7 @@ expect(cert).toEqual('MIICuDCCAl...')
 Decodes a certificate from base64url encoded DER format to a string.
 
 ```javascript
-import { decodeCert } from 'https://deno.land/x/lndconnect'
+import { decodeCert } from 'https://deno.land/x/lndconnect/mod.ts'
 // pass a base64url encoded DER cert
 const cert = decodeCert(encodedCert)
 // returns utf8 encoded PEM cert.
@@ -84,12 +85,13 @@ expect(cert).toEqual('-----BEGIN CERTIFICATE-----\n...')
 
 #### Macaroon
 
-**encodeMacaroon(macaroon, format):**
+**encodeMacaroon(macaroon):**
 
-Encodes a binary macaroon (String or Buffer) to base64url encoded string.
+Encodes a binary macaroon (hex string or binary UInt8Array) or a path to a macaroon (string) to base64url encoded string.
+If you provide a path, the path is encoded, not the contents of the file with that path.
 
 ```javascript
-import { encodeMacaroon } from 'https://deno.land/x/lndconnect'
+import { encodeMacaroon } from 'https://deno.land/x/lndconnect/mod.ts'
 const macaroonPath = path.join(__dirname, 'admin.macaroon')
 const macaroon = encodeMacaroon(macaroonPath)
 // returns base64url encoded macaroon.
@@ -101,7 +103,7 @@ expect(macaroon).toEqual('AgEDbG5kAr...')
 Decodes a base64url encoded macaroon to a hex encoded macaroon.
 
 ```javascript
-import { decodeMacaroon } from 'https://deno.land/x/lndconnect'
+import { decodeMacaroon } from 'https://deno.land/x/lndconnect/mod.ts'
 // pass a base64url encoded macaroon
 const macaroon = decodeMacaroon(encodedMacaroon)
 // returns hex encoded macaroon.
