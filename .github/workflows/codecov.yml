@@ -23,4 +23,4 @@ jobs:
       - name: Collect coverage
         uses: codecov/codecov-action@v1.0.10 # upload the report on Codecov
         with:
-          file: ./coverage.lcov
+          file: ./src/coverage.lcov
