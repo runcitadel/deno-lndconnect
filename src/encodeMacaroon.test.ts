@@ -9,14 +9,14 @@ import {
 } from "./test.ts";
 
 Deno.test("encodeMacaroon (data)", async () => {
-  const macaroonPath = join("fixtures", "admin.macaroon");
+  const macaroonPath = join("src", "fixtures", "admin.macaroon");
   const macaroonFile = await Deno.readFile(macaroonPath);
   const macaroon = encodeMacaroon(macaroonFile);
   assertEquals(macaroon, ENCODED_MACAROON, "encoded macaroon");
 });
 
 Deno.test("encodeMacaroon (hex)", async () => {
-  const macaroonPath = join("fixtures", "admin.macaroon");
+  const macaroonPath = join("src", "fixtures", "admin.macaroon");
   const macaroonFile = await Deno.readFile(macaroonPath);
   const macaroon = encodeMacaroon(
     new TextDecoder().decode(encode(macaroonFile)),
