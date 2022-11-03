@@ -17,10 +17,9 @@ jobs:
           deno-version: v1.27.0
       - name: Create coverage files
         run: |
-          cd src
           deno test --allow-all --unstable --coverage=coverage
           deno --unstable coverage ./coverage --lcov > coverage.lcov
       - name: Collect coverage
         uses: codecov/codecov-action@v1.0.10 # upload the report on Codecov
         with:
-          file: ./src/coverage.lcov
+          file: ./coverage.lcov
