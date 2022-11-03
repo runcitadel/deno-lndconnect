@@ -1,0 +1,25 @@
+name: Upload code coverage report
+
+on:
+    push:
+      branches: [master]
+
+    pull_request:
+      branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.27.0
+      - name: Create coverage files
+        run: deno test --allow-all --unstable --coverage=coverage # create coverage files
+      - name: Create coverage report
+        run: deno --unstable coverage ./coverage --lcov > coverage.lcov # create coverage report
+      - name: Collect coverage
+        uses: codecov/codecov-action@v1.0.10 # upload the report on Codecov
+        with:
+          file: ./coverage.lcov
