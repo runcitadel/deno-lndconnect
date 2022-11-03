@@ -4,7 +4,7 @@ import { assertEquals } from "https://deno.land/std@0.153.0/testing/asserts.ts";
 import { CERT_PATH, ENCODED_CERT, ENCODED_CERT_PATH } from "./test.ts";
 
 Deno.test("encodeCert (data)", async () => {
-  const certPath = join("fixtures", "tls.cert");
+  const certPath = join("src", "fixtures", "tls.cert");
   const certFile = await Deno.readTextFile(certPath);
   const cert = encodeCert(certFile);
   assertEquals(cert, ENCODED_CERT);
