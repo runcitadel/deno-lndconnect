@@ -1,5 +1,7 @@
 # lndconnect
 
+[![codecov](https://codecov.io/github/runcitadel/deno-lndconnect/branch/main/graph/badge.svg?token=Uh0EXCsxAH)](https://codecov.io/github/runcitadel/deno-lndconnect)
+
 > Generate and parse lndconnect uris https://github.com/LN-Zap/lndconnect ⚡️
 
 This package provides utilities for generating and parsing lndconnect uris.
