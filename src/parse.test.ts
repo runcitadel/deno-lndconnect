@@ -48,5 +48,5 @@ Deno.test("parse (legacy format)", () => {
 });
 
 Deno.test("parse (invalid protocol)", () => {
-  assertThrows(() => parse("111" + CONNECTION_STRING), "Invalid protocol");
+  assertThrows(() => parse("111" + CONNECTION_STRING), Error, "Invalid lndconnect url", "Invalid protocol");
 });
