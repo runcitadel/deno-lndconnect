@@ -27,5 +27,5 @@ Deno.test("decode legacy (valid)", () => {
 });
 
 Deno.test("decode (invalid protocol)", () => {
-  assertThrows(() => decode("111" + CONNECTION_STRING), Error, "Invalid lndconnect url", "Invalid protocol");
+  assertThrows(() => decode("a" + CONNECTION_STRING), Error, "Invalid lndconnect url", "Invalid protocol");
 });
