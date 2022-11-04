@@ -7,7 +7,7 @@ import {
   HOSTNAME,
   PORT,
 } from "./test.ts";
-import { assertEquals } from "https://deno.land/std@0.153.0/testing/asserts.ts";
+import { assertEquals, assertThrows } from "https://deno.land/std@0.153.0/testing/asserts.ts";
 
 Deno.test("parse", () => {
   const connectionString = parse(CONNECTION_STRING);
@@ -45,4 +45,8 @@ Deno.test("parse (legacy format)", () => {
     ENCODED_MACAROON,
     "generated expected macaroon string",
   );
+});
+
+Deno.test("parse (invalid protocol)", () => {
+  assertThrows(() => parse("111" + CONNECTION_STRING), "Invalid protocol");
 });

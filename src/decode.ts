@@ -12,7 +12,7 @@ const decode = (string = "") => {
   // https://felixfbecker.github.io/whatwg-url-custom-host-repro/
   // Force the protocol to HTTP and parse again to work around this.
   if (
-    parsedUrl.protocol !== "lndconnect:" && parsedUrl.protocol !== "lnconnect:"
+    parsedUrl.protocol !== "lndconnect:"
   ) {
     throw new Error("Invalid lndconnect url");
   }
