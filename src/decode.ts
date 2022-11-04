@@ -20,10 +20,6 @@ const decode = (string = "") => {
   parsedUrl.protocol = "http:";
   parsedUrl = new URL(parsedUrl.toString());
 
-  if (parsedUrl.protocol !== "lndconnect:") {
-    throw new Error("Invalid protocol");
-  }
-
   const hasCert = parsedUrl.searchParams.has("cert");
   const hasMacaroon = parsedUrl.searchParams.has("macaroon");
   const hasHost = !!(parsedUrl.host || parsedUrl.searchParams.get("host"));
