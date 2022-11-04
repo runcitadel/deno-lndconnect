@@ -16,3 +16,7 @@ Deno.test("decodeMacaroon (path)", () => {
   const decodedMacaroon = decodeMacaroon(ENCODED_MACAROON_PATH);
   assertEquals(decodedMacaroon, MACAROON_PATH);
 });
+
+Deno.test("decodeMacaroon (empty)", () => {
+  assertEquals(decodeMacaroon(""), "");
+});

@@ -11,3 +11,7 @@ Deno.test("decodeCert (path)", () => {
   const decodedCert = decodeCert(ENCODED_CERT_PATH);
   assertEquals(decodedCert, CERT_PATH);
 });
+
+Deno.test("decodeCert (empty)", () => {
+  assertEquals(decodeCert(""), "");
+});

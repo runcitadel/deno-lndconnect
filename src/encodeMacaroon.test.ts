@@ -28,3 +28,7 @@ Deno.test("encodeMacaroon (path)", () => {
   const cert = encodeMacaroon(MACAROON_PATH);
   assertEquals(cert, ENCODED_MACAROON_PATH, "encoded macaroon path");
 });
+
+Deno.test("encodeMacaroon (empty)", () => {
+  assertEquals(encodeMacaroon(""), "");
+});
