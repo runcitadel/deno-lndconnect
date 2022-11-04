@@ -2,6 +2,9 @@ import parse from "./parse.ts";
 import {
   CONNECTION_STRING,
   CONNECTION_STRING_LEGACY,
+  CONNECTION_STRING_NO_CERT,
+  CONNECTION_STRING_NO_HOST,
+  CONNECTION_STRING_NO_MACAROON,
   ENCODED_CERT,
   ENCODED_MACAROON,
   HOSTNAME,
@@ -49,4 +52,10 @@ Deno.test("parse (legacy format)", () => {
 
 Deno.test("parse (invalid protocol)", () => {
   assertThrows(() => parse("a" + CONNECTION_STRING), Error, "Invalid lndconnect url", "Invalid protocol");
+});
+
+Deno.test("parse (missing properties)", () => {
+  assertThrows(() => parse(CONNECTION_STRING_NO_CERT), Error, "Invalid lndconnect url", "Missing certs");
+  assertThrows(() => parse(CONNECTION_STRING_NO_HOST), Error, "Invalid lndconnect url", "Missing host");
+  assertThrows(() => parse(CONNECTION_STRING_NO_MACAROON), Error, "Invalid lndconnect url", "Missing macaroon");
 });
