@@ -1,0 +1,29 @@
+name: Test on node
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.27.0
+
+      - name: Build & test using DNT
+        run: deno run -A scripts/build_npm.ts
