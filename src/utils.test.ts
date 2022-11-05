@@ -38,6 +38,17 @@ Deno.test("untildify should work properly", () => {
   assertEquals(untildify("~/thing"), join(homedir()!, "thing"));
 });
 
+Deno.test("untildify should do nothing if it can't find the homedir", () => {
+  const oldHome = Deno.env.get("HOME");
+  const oldUserProfile = Deno.env.get("USERPROFILE");
+  assertEquals(untildify("~/thing"), join(homedir()!, "thing"));
+  Deno.env.delete("HOME");
+  Deno.env.delete("USERPROFILE");
+  assertEquals(untildify("~/thing"), "~/thing");
+  if (oldHome) Deno.env.set("HOME", oldHome);
+  if (oldUserProfile) Deno.env.set("USERPROFILE", oldUserProfile);
+});
+
 Deno.test("strictUriEncode should work properly", () => {
   assertEquals(strictUriEncode("unicorn!foobar"), "unicorn%21foobar");
 });
