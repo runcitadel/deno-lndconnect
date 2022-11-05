@@ -1,5 +1,5 @@
-import { encode } from "https://deno.land/std@0.153.0/encoding/base64url.ts";
-import { decode } from "https://deno.land/std@0.153.0/encoding/hex.ts";
+import { encode } from "https://deno.land/std@0.162.0/encoding/base64url.ts";
+import { decode } from "https://deno.land/std@0.162.0/encoding/hex.ts";
 import { strictUriEncode } from "./utils.ts";
 
 /**

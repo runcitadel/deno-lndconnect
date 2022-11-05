@@ -2,7 +2,7 @@ import decode from "./decode.ts";
 import {
   assertEquals,
   assertThrows,
-} from "https://deno.land/std@0.153.0/testing/asserts.ts";
+} from "https://deno.land/std@0.162.0/testing/asserts.ts";
 import {
   CERT,
   CONNECTION_STRING,

@@ -1,7 +1,7 @@
-import { decode } from "https://deno.land/std@0.153.0/encoding/base64url.ts";
-import { encode } from "https://deno.land/std@0.153.0/encoding/base64.ts";
+import { decode } from "https://deno.land/std@0.162.0/encoding/base64url.ts";
+import { encode } from "https://deno.land/std@0.162.0/encoding/base64.ts";
 import { untildify } from "./utils.ts";
-import { isAbsolute } from "https://deno.land/std@0.153.0/path/win32.ts";
+import { isAbsolute } from "https://deno.land/std@0.162.0/path/win32.ts";
 
 /**
  * decode a tls certificate from a base64 encoded url string.
