@@ -21,7 +21,7 @@ jobs:
       - name: Get tag version
         if: startsWith(github.ref, 'refs/tags/')
         id: get_tag_version
-        run: echo "name=TAG_VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+        run: echo "TAG_VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
   
       - name: Build using DNT
         run: deno run -A scripts/build_npm.ts ${{steps.get_tag_version.outputs.TAG_VERSION}}
