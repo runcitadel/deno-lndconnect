@@ -39,6 +39,9 @@ Deno.test("untildify should work properly", () => {
 });
 
 Deno.test("untildify should do nothing if it can't find the homedir", () => {
+  // Ignore this test on node
+  // @ts-ignore process is defined in node, but not in deno
+  if (typeof process !== "undefined") return; 
   const oldHome = Deno.env.get("HOME");
   const oldUserProfile = Deno.env.get("USERPROFILE");
   assertEquals(untildify("~/thing"), join(homedir()!, "thing"));

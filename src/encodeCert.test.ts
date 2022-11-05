@@ -1,10 +1,11 @@
 import encodeCert from "./encodeCert.ts";
-import { join } from "https://deno.land/std@0.162.0/path/mod.ts";
+import { join, dirname } from "https://deno.land/std@0.162.0/path/mod.ts";
 import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
 import { CERT_PATH, ENCODED_CERT, ENCODED_CERT_PATH } from "./test.ts";
 
 Deno.test("encodeCert (data)", async () => {
-  const certPath = join("src", "fixtures", "tls.cert");
+  const currentFile = new URL(import.meta.url).pathname;
+  const certPath = join(dirname(currentFile), "fixtures", "tls.cert");
   const certFile = await Deno.readTextFile(certPath);
   const cert = encodeCert(certFile);
   assertEquals(cert, ENCODED_CERT);
