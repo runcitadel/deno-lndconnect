@@ -1,16 +1,12 @@
-# lndconnect
+# simple-lndconnect
 
 [![codecov](https://codecov.io/github/runcitadel/deno-lndconnect/branch/main/graph/badge.svg?token=Uh0EXCsxAH)](https://codecov.io/github/runcitadel/deno-lndconnect)
 
 > Generate and parse lndconnect uris https://github.com/LN-Zap/lndconnect ⚡️
 
-This package provides utilities for generating and parsing lndconnect uris.
+This package is a modernized and cleaned up version of the original [node-lndconnect](https://github.com/LN-Zap/node-lndconnect).
 
 For more information take a look at the [specification of the uri format](https://github.com/LN-Zap/lndconnect/blob/master/lnd_connect_uri.md).
-
-This package is a TypeScript & Deno port of the original [node-lndconnect](https://github.com/LN-Zap/node-lndconnect) with some API improvements.
-
-It still works in browsers & node.
 
 ## Table of Contents
 
@@ -124,7 +120,7 @@ Run the tests suite:
 
 ## Maintainers
 
-[@AaronDewes)](https://github.com/AaronDewes).
+[@AaronDewes](https://github.com/AaronDewes).
 
 ## Contribute
 
