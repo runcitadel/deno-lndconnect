@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import decodeMacaroon from "./decodeMacaroon.ts";
 import {
   ENCODED_MACAROON,

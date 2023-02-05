@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import format from "./format.ts";
 import {
   CONNECTION_STRING,

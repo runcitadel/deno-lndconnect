@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import encode from "./encode.ts";
 import { CERT, CONNECTION_STRING, HOSTNAME, MACAROON, PORT } from "./test.ts";
 

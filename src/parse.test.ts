@@ -10,7 +10,7 @@ import {
   HOSTNAME,
   PORT,
 } from "./test.ts";
-import { assertEquals, assertThrows } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { assertEquals, assertThrows } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 
 Deno.test("parse", () => {
   const connectionString = parse(CONNECTION_STRING);

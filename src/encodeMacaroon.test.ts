@@ -1,7 +1,7 @@
 import encodeMacaroon from "./encodeMacaroon.ts";
-import { encode } from "https://deno.land/std@0.162.0/encoding/hex.ts";
-import { join, dirname } from "https://deno.land/std@0.162.0/path/mod.ts";
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { encode } from "https://deno.land/std@0.176.0/encoding/hex.ts";
+import { join, dirname } from "https://deno.land/std@0.176.0/path/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import {
   ENCODED_MACAROON,
   ENCODED_MACAROON_PATH,

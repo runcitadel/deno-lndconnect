@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import decodeCert from "./decodeCert.ts";
 import { CERT, CERT_PATH, ENCODED_CERT, ENCODED_CERT_PATH } from "./test.ts";
 

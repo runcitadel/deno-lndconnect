@@ -1,4 +1,4 @@
-import { homedir } from "https://deno.land/std@0.162.0/node/os.ts";
+import { homedir } from "https://deno.land/std@0.176.0/node/os.ts";
 
 
 export function untildify(pathWithTilde: string) {

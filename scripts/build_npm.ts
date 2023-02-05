@@ -1,5 +1,5 @@
-import { build, emptyDir } from "https://deno.land/x/dnt@0.31.0/mod.ts";
-import { copy, walk } from "https://deno.land/std@0.162.0/fs/mod.ts";
+import { build, emptyDir } from "https://deno.land/x/dnt@0.33.1/mod.ts";
+import { copy, walk } from "https://deno.land/std@0.176.0/fs/mod.ts";
 
 await emptyDir("./npm");
 await Deno.mkdir("./npm/script/src", { recursive: true });

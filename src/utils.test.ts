@@ -10,9 +10,9 @@ import { untildify, strictUriEncode } from "./utils.ts";
 import {
   assertEquals,
   assertThrows,
-} from "https://deno.land/std@0.162.0/testing/asserts.ts";
-import { join } from "https://deno.land/std@0.162.0/path/mod.ts";
-import { homedir } from "https://deno.land/std@0.162.0/node/os.ts";
+} from "https://deno.land/std@0.176.0/testing/asserts.ts";
+import { join } from "https://deno.land/std@0.176.0/path/mod.ts";
+import { homedir } from "https://deno.land/std@0.176.0/node/os.ts";
 
 
 Deno.test("untildify should throw with objects", () => {

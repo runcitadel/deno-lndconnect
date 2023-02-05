@@ -1,6 +1,6 @@
 import encodeCert from "./encodeCert.ts";
-import { join, dirname } from "https://deno.land/std@0.162.0/path/mod.ts";
-import { assertEquals } from "https://deno.land/std@0.162.0/testing/asserts.ts";
+import { join, dirname } from "https://deno.land/std@0.176.0/path/mod.ts";
+import { assertEquals } from "https://deno.land/std@0.176.0/testing/asserts.ts";
 import { CERT_PATH, ENCODED_CERT, ENCODED_CERT_PATH } from "./test.ts";
 
 Deno.test("encodeCert (data)", async () => {
